@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <servlet>
+        <servlet-name>Bankomat_srv</servlet-name>
+        <servlet-class>Withdraw_srv</servlet-class>
+        <init-param>
+            <param-name>Withdraw</param-name>
+            <param-value>Value</param-value>
+        </init-param>
+        <init-param>
+            <param-name>Pay_10</param-name>
+            <param-value>Value</param-value>
+        </init-param>
+        <init-param>
+            <param-name>Pay_20</param-name>
+            <param-value>Value</param-value>
+        </init-param>
+        <init-param>
+            <param-name>Pay_50</param-name>
+            <param-value>Value</param-value>
+        </init-param>
+        <init-param>
+            <param-name>Pay_100</param-name>
+            <param-value>Value</param-value>
+        </init-param>
+        <init-param>
+            <param-name>Pay_200</param-name>
+            <param-value>Value</param-value>
+        </init-param>
+        <init-param>
+            <param-name>Pay_500</param-name>
+            <param-value>Value</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Bankomat_srv</servlet-name>
+        <url-pattern>/Withdraw_srv</url-pattern>
+    </servlet-mapping>
+</web-app>

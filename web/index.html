@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Bankomat</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="Withdraw_srv" method="post">
+        <label for="Withdraw">Wypłać:</label>
+        <input type="Number" MIN="20" MAX="2000" STEP="10" VALUE="20" SIZE="6" name="Withdraw"><br><br>
+        <input type="submit" value=Wypłać"><br><br>
+        </form>
+        <div>Wpłata banknotów</div>
+        <form action="Payment_srv" method="post">
+        <label for="Pay_10">Ilość 10 zł:</label>
+        <input TYPE="NUMBER" MIN="0" MAX="200" STEP="1" VALUE="0" SIZE="6" name="Pay_10"><br><br>
+        <label for="Pay_20">Ilość 20 zł:</label>
+        <input TYPE="NUMBER" MIN="0" MAX="200" STEP="1" VALUE="0" SIZE="6" name="Pay_20"><br><br>
+        <label for="Pay_50">Ilość 50 zł:</label>
+        <input TYPE="NUMBER" MIN="0" MAX="200" STEP="1" VALUE="0" SIZE="6" name="Pay_50"><br><br>
+        <label for="Pay_100">Ilość 100 zł:</label>
+        <input TYPE="NUMBER" MIN="0" MAX="200" STEP="1" VALUE="0" SIZE="6" name="Pay_100"><br><br>
+        <label for="Pay_200">Ilość 200 zł:</label>
+        <input TYPE="NUMBER" MIN="0" MAX="200" STEP="1" VALUE="0" SIZE="6" name="Pay_200"><br><br>
+        <label for="Pay_500">Ilość 500 zł:</label>
+        <input TYPE="NUMBER" MIN="0" MAX="200" STEP="1" VALUE="0" SIZE="6" name="Pay_500"><br><br>
+        <input type="submit" value="Wpłać"><br><br>
+    </form>
+    </body>
+</html>
