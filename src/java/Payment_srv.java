@@ -63,7 +63,7 @@ public class Payment_srv extends HttpServlet {
     static String Message;
     public static Bankomat bank = new Bankomat();
     // list of nominals 
-    public ArrayList<Integer> PayNominalList = new ArrayList<>(Arrays.asList(10,20,50,100,200,500));
+    public ArrayList<Integer> PayNominalList = new ArrayList<>(Arrays.asList(20,50,100,200));
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

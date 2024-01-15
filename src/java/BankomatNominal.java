@@ -8,6 +8,7 @@
  * @author adamr
  */
 public class BankomatNominal {
+
     int nominal;
     int count;
 
@@ -31,27 +32,14 @@ public class BankomatNominal {
     public void setCount(int count) {
         this.count = count;
     }
-    
-    public void subNominalCount(int nominal, int count){
+
+    public void subNominalCount(int nominal, int count) {
         this.nominal = nominal;
-        // if count of nominal is more than 0
-        if(this.count > 0){
-        this.count -= count;}
-        else{
-            this.count = 0;
-        }
+        this.count -= count;
     }
-    
-    public void addNominalCount(int nominal, int count){
+
+    public void addNominalCount(int nominal, int count) {
         this.nominal = nominal;
-        // if count of nominal is more than 0
-        if(this.count > 0){
-        this.count += count;}
-        else{
-            this.count = 0;
-        }
+        this.count += count;
     }
-    
-    
-    
 }
