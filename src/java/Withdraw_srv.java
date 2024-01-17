@@ -22,7 +22,15 @@ import java.util.List;
  * @author adamr
  */
 public class Withdraw_srv extends HttpServlet {
-
+    /**
+     * Withdraw - value from parameter withdraw
+     */
+    static int Withdraw;
+    /**
+     * message to display in page
+     */
+    static String Message;
+    public static Bankomat bank = new Bankomat();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -59,9 +67,6 @@ public class Withdraw_srv extends HttpServlet {
      * @param response servlet response
      * @throws IOException if an I/O error occurs
      */
-    static int Withdraw;
-    static String Message;
-    public static Bankomat bank = new Bankomat();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws  IOException , ServletException {
@@ -89,6 +94,7 @@ public class Withdraw_srv extends HttpServlet {
             Withdraw = Integer.parseInt(request.getParameter("Withdraw"));
             Message = bank.withdraw(Withdraw);
         }
+        // if withdraw value is null
         catch (NumberFormatException e){
             Message = "Null value in number field";
         }

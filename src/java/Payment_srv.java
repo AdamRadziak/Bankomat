@@ -23,7 +23,15 @@ import java.util.List;
  */
 @WebServlet(urlPatterns = {"/Payment_srv"})
 public class Payment_srv extends HttpServlet {
-
+    /**
+     * message to display in page
+     */
+    static String Message;
+    public static Bankomat bank = new Bankomat();
+    /**
+     * list of available nominals 
+     * */
+    public ArrayList<Integer> PayNominalList = new ArrayList<>(Arrays.asList(20,50,100,200));
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -60,10 +68,6 @@ public class Payment_srv extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    static String Message;
-    public static Bankomat bank = new Bankomat();
-    // list of nominals 
-    public ArrayList<Integer> PayNominalList = new ArrayList<>(Arrays.asList(20,50,100,200));
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -90,16 +94,20 @@ public class Payment_srv extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        // names of params from web.xml assingned to payment
         Enumeration<String> ParamNames = request.getParameterNames();
+        // convert enum to list
         List<String> listParamNames = Collections.list(ParamNames);
         ArrayList<Integer> PaymentCountList = new ArrayList<>();
         try{
         for (int i=0; i < listParamNames.size();i++){
-            // print parameter name
+            // add count of payment nominlas from each parameter
             PaymentCountList.add(Integer.valueOf(request.getParameter(listParamNames.get(i))));
         }
+        // PayNominalList - List of available Nominals
         Message = bank.payment(PayNominalList,PaymentCountList);
         }
+        // if in parameter is null
         catch(NumberFormatException e){
             Message = "Null value in number field";
         }

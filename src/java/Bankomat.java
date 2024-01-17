@@ -8,16 +8,24 @@ import java.util.Comparator;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 /**
- *
+ * this class is for methods to withdraw and payment in atm
  * @author adamr
  */
 public class Bankomat {
-    // list of nominals and count of nominals in atm
+    /**
+     * list of nominals and count of nominals in atm
+     */
     public static ArrayList<BankomatNominal> Checkout = new ArrayList<>();
-    // value of all nominals in atm
+    /**
+     * sum of all nominals in atm 
+     */
     public static int Sum_of_nominals;
 
-
+    /**
+     * function withdraw cash from atm ( ArrayList Checkout)
+     * @param amount - withdraw cash
+     * @return message - message with information to display in web
+     */
     public String withdraw(int amount) {
         // withdrawed nominals
         ArrayList<Integer> nominals_withdraw = new ArrayList<>();
@@ -82,7 +90,13 @@ public class Bankomat {
         }
         return message;
     }
-
+    
+    /**
+     * function add cash to atm
+     * @param nominal - List of payment nominals in atm
+     * @param amount - List of payment nominals count
+     * @return message - message with information to display in web
+     */
     public String payment(ArrayList<Integer> nominal, ArrayList<Integer> amount) {
         String message = "Wpłacono \n";
         int payment_sum = 0;
